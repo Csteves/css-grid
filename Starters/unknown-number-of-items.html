@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../assets/style.css">
+  <title>Flexbox vs CSS Grid: Unknown Number of Items!</title>
+</head>
+
+<body>
+  <!-- Unknown Amount of Elements -->
+  <script>
+    function addItem() {
+      const unknown = document.querySelector('.unknown');
+      unknown.innerHTML += `<div class="item">${unknown.childElementCount}</div>`;
+    }
+    function addItem2() {
+      const unknown = document.querySelector('.unknown-2');
+      unknown.innerHTML += `<div class="item">${unknown.childElementCount}</div>`;
+    }
+  </script>
+  <h1>Grid Version</h4>
+  <button onClick="addItem()">+ Add</button>
+  <div class="unknown">
+    <div class="item">1</div>
+    <div class="item">2</div>
+    <div class="item">3</div>
+  </div>
+  <br>
+  <h1>Flex Version</h4>
+  <button onClick="addItem2()">+ Add</button>
+  <div class="unknown-2">
+    <div class="item">1</div>
+    <div class="item">2</div>
+    <div class="item">3</div>
+  </div>
+
+
+  <style>
+    /* Grid version */
+    .unknown {
+      display:grid;
+      grid-template-columns: repeat(auto-fit, minMax(50px,1fr));
+      grid-template-rows: 50px;
+      grid-gap:20px;
+      grid-auto-rows:200px;
+    }
+    /* Flex version */
+    .unknown-2 {
+      display:flex;
+      flex-wrap:wrap;
+      justify-content: space-between;
+      justify-items: stretch;
+      margin:0 -10px 0 -10px;
+    }
+    .unknown-2 .item{
+      min-width: 50px;
+      flex:1;
+      margin:10px;
+    }
+  </style>
+</body>
+
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../assets/style.css">
+  <title>Flexbox vs CSS Grid: Flex on Item!</title>
+</head>
+
+<body>
+  <!-- The Longer Item in the middle -->
+  <h2>Flex</h2>
+  <div class="controls">
+    <button>⏯️</button>
+    <button>🐢</button>
+    <button>🐰</button>
+    <div class="scrubber"></div>
+    <button>💬</button>
+    <button>🔽</button>
+  </div>
+  <h2>Grid</h2>
+  <div class="controls-2">
+    <button>⏯️</button>
+    <button>🐢</button>
+    <button>🐰</button>
+    <div class="scrubber-2"></div>
+    <button>💬</button>
+    <button>🔽</button>
+  </div>
+
+  <style>
+    /* Flex Example */
+    .controls {
+      margin: 200px 0;
+      display: flex;
+      align-items: center;
+
+    }
+
+    .scrubber {
+      background: #BADA55;
+      height: 10px;
+      min-width: 100px;
+      border-radius: 10px;
+      flex:1;
+    }
+    /* Grid Example */
+    /* Looks like it accomplished the same thing, however the elements are hard coded and cannot be added or removed */
+    .controls-2 {
+      margin: 200px 0;
+      display: grid;
+      grid-template-columns: auto auto auto 1fr auto auto;
+      align-items: center;
+    }
+    .scrubber-2 {
+      background: #BADA55;
+      height: 10px;
+      min-width: 100px;
+      border-radius: 10px;
+
+    }
+  </style>
+
+</body>
+
+</html>
